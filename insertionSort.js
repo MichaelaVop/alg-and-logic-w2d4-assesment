@@ -9,6 +9,21 @@ let arr2 = [56, 98, 65, 3, 4, 58, 68, 90, 12, 34, 45];
 
 const insertionSort = function(arr) {
 
+    //call the first element sorted
+    //look at the next element, sort it and repeat 1st
+
+    for (let i = 1; i < arr.length; i++) {
+        let key = arr[i];
+        let j = i - 1;
+        while (j >= 0 && arr[j] > key) {
+            arr[j+1] = arr[j];
+            j--;
+        }
+        arr[j + 1] = key;
+    }
+
+    return arr;
+
 };
 
 console.log(insertionSort(arr1));
